@@ -2,7 +2,7 @@ import { combineReducers, legacy_createStore as createStore } from '@reduxjs/too
 import { persistReducer, persistStore } from 'redux-persist';
 import { moviePersistConfig } from './configs/redux-persist';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { HelperGlobal } from '../../shared/helper/HelperGlobal';
+// import { HelperGlobal } from '../../shared/helper/HelperGlobal';
 import { DefaultSagaAction } from '../../shared/helper/interfaces/sagas.interface';
 import movieReducer from '../../movies/infraestructure/redux/movieReducer';
 
@@ -20,10 +20,10 @@ export type RootState = ReturnType<typeof appReducer>;
 
 export const configureStore = () => {
   const rootReducer: any = (state: RootState, action: DefaultSagaAction<any>): any => {
-    const { payload } = action;
-    if (HelperGlobal.isObject(payload)) {
-      return appReducer(undefined, action);
-    }
+    // const { payload } = action;
+    // if (HelperGlobal.isObject(payload)) {
+    //   return appReducer(undefined, action);
+    // }
     return appReducer(state, action);
   };
 

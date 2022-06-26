@@ -9,9 +9,7 @@ export function MoviePresenter() {
 
   useEffect(() => {
     console.log('searchHistory', searchHistory);
-    dispatch(dataMovie('test tesrt'));
-
-    console.log('lo hicimos');
+    dispatch(dataMovie(true));
   }, []);
 
   return <Movie />;
